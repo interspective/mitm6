@@ -66,7 +66,7 @@ Filtering options:
 You can manually override most of the autodetect options (though overriding the MAC address will break things). If the network has some hardware which blocks or detects rogue Router Advertisement messages, you can add the `--no-ra` flag to not broadcast those. Router Advertisements are not needed for mitm6 to work since it relies mainly on DHCPv6 messages.
 
 ### Filtering options
-Several filtering options are available to select which hosts you want to attack and spoof. First there are the `--host-whitelist` and `--host-blacklist` options (or `-hw` and `-hb` for short), which take a (partial) domain as argument. Incoming DHCPv6 requests will be filtered against this list. The property checked is the DHCPv6 FQND option, in which the client provides its hostname. 
+Several filtering options are available to select which hosts you want to attack and spoof. First there are the `--host-whitelist` and `--host-blacklist` options (or `-hw` and `-hb` for short), which take a (partial) domain as argument. Incoming DHCPv6 requests will be filtered against this list. The property checked is the DHCPv6 FQDN option, in which the client provides its hostname. 
 The same applies for DNS requests, for this the `--domain` option (or `-d`) is available, where you can supply which domain(s) you want to spoof. Blacklisting is also possible with `--blacklist`/`-b`.
 
 For both the host and DNS filtering, simple string matching is performed. So if you choose to reply to `wpad`, it will also reply to queries for `wpad.corpdomain.com`. If you want more specific filtering, use both the whitelist and blacklist options, since the blacklist takes precedence over the whitelist.
